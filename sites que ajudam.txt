@@ -1,0 +1,9 @@
+### PALETAS DE CORES
+https://color.adobe.com/pt/create/color-wheel
+https://coolors.co/
+
+### AJUSTE DE ELEMENTOS NA TELA
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+### BAIXAR FONTES
+https://fonts.google.com/

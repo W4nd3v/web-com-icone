@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: #000000; 
+    --cor-secundaria: #F6F6F6; 
+    --cor-destaque: #22d4fd; 
+    --cor-transicao: #272727;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+/* =========================
+   TEMAS (paletas)
+   Troca automática quando <html data-theme="...">
+   ========================= */
+
+/* Tema claro */
+html[data-theme="light"] {
+    --cor-primaria: #ffffff;
+    --cor-secundaria: #111827;
+    --cor-destaque: #2563eb;
+    --cor-transicao: #e5e7eb;
+}
+
+/* Tema roxo */
+html[data-theme="purple"] {
+    --cor-primaria: #0b0614;
+    --cor-secundaria: #f5f3ff;
+    --cor-destaque: #a855f7;
+    --cor-transicao: #241233;
+}
+
+/* Tema verde (extra de exemplo) */
+html[data-theme="green"] {
+    --cor-primaria: #041b12;
+    --cor-secundaria: #F6F6F6;
+    --cor-destaque: #10b981;
+    --cor-transicao: #063026;
+}
+
+/* Transição suave ao trocar de tema */
+body {
+    transition: background-color .25s, color .25s;
+}
+
+
+* {
+    margin: 0; /* Remove as margens padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15% ;
+
+}
+
+.cabecalho__menu {
+    display: flex; /* Define o layout como flexível para organizar os elementos em linha ou coluna */
+    gap: 80px; /* Adiciona um espaço de 80 pixels entre os itens do menu */
+
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none; /* Remove a decoração de texto (sublinhado) dos links */
+    color: var(--cor-destaque);
+
+}
+
+.apresentacao {
+    display: flex; /* Define o layout como flexível para organizar os elementos em linha ou coluna */
+    align-items: center; /* Alinha os itens ao centro horizontalmente */
+    justify-content: space-between;
+    margin: 5.25% 15%;
+
+}
+
+/* Usanddo para limitar o comprimento máximo de caracteres da linha */
+.apresentacao__conteudo {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 50px;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 30px;
+    font-family: var(--fonte-secundaria);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;    
+}
+
+.apresentacao__conteudo__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.apresentacao__conteudo__links__subtitulo {
+    font-size: 18px;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+}
+
+.apresentacao__conteudo__links_link {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-destaque);
+    width: 360px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    align-items: center;
+
+}
+
+.apresentacao__conteudo__links_link:hover {
+    background-color: var(--cor-transicao);
+    color: var(--cor-primaria);
+    /* transition: 0.3s ease-in-out; */
+}
+
+/* ### QUANDO PASSA O MOUSE MUDA A COR E A IMAGEM */
+.apresentacao__conteudo__links_link:hover .icone_instagram {
+    content: url("../assets/instagram_PRETO.png");
+}
+
+.apresentacao__conteudo__links_link:hover .icone_github {
+    content: url("../assets/github_PRETO.png");
+}
+
+body {
+    /* height: 100vh; Define a altura do corpo para ocupar toda a altura da janela de visualização */
+    box-sizing: border-box; /* Define o modelo de caixa para incluir bordas e preenchimento sem sobresair do limite estabelecido*/
+    background-color: var(--cor-primaria); /* Define a cor de fundo como preto */
+    color: var(--cor-secundaria); /* Define a cor do texto como branco */   
+
+}
+
+.titulo-destaque {
+    color: var(--cor-destaque); /* Define a cor do título de destaque como marrom escuro */
+}
+
+strong {
+    color: var(--cor-destaque); /* Define a cor do texto em negrito como marrom escuro */
+}
+
+.rodape {
+    padding: 24px;
+    color: var(--cor-primaria);
+    background-color: var(--cor-destaque);
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+}
+
+
+/* Botão de tema no menu */
+.cabecalho__menu__botao {
+    background: transparent;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-destaque);
+    font-family: var(--fonte-secundaria);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cabecalho__menu__botao:hover {
+    background: var(--cor-transicao);
+}
+
+
+/* SVG que muda de cor com o tema (porque usa variáveis) */
+.heroSvg{
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+}
+
+.heroBg{ fill: var(--cor-transicao); }
+.heroAccent{ fill: var(--cor-destaque); }
+.heroText{ fill: var(--cor-secundaria); }
+.heroCheck{ fill: var(--cor-primaria); }
